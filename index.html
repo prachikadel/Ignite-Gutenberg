@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gutenberg Project</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+
+  <main class="home-container">
+
+   
+
+    <h1 class="heading">Gutenberg Project</h1>
+
+    <p class="description">
+      A social cataloging website that allows you to freely search its database
+      of books, annotations, and reviews.
+    </p>
+
+    <div class="genre-list">
+      <button onclick="goToBooks('Fiction')">Fiction</button>
+      <button onclick="goToBooks('Drama')">Drama</button>
+      <button onclick="goToBooks('Humor')">Humor</button>
+      <button onclick="goToBooks('Politics')">Politics</button>
+      <button onclick="goToBooks('Philosophy')">Philosophy</button>
+      <button onclick="goToBooks('History')">History</button>
+      <button onclick="goToBooks('Adventure')">Adventure</button>
+    </div>
+
+  </main>
+
+  <script>
+    function goToBooks(category) {
+      window.location.href =
+        `books.html?category=${encodeURIComponent(category)}`;
+    }
+
+    function toggleTheme() {
+      document.body.classList.toggle("dark");
+    }
+  </script>
+
+</body>
+</html>

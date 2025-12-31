@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Books</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  
+
+  <header class="books-header">
+    <button class="back-btn" onclick="history.back()">←</button>
+    <h2 class="category-title" id="categoryTitle">Category</h2>
+  </header>
+
+  <div class="search-wrapper">
+    <input type="text" id="searchInput" placeholder="Search" />
+  </div>
+
+  <main id="booksContainer" class="books-grid"></main>
+
+  <script src="script.js"></script>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    document.getElementById("categoryTitle").textContent =
+      params.get("category");
+
+    function toggleTheme() {
+      document.body.classList.toggle("dark");
+    }
+  </script>
+
+</body>
+</html>
